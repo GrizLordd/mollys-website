@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Molly's Popcorn — Gourmet Popcorn &amp; Cookies, Jaipur</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Molly's Popcorn | Gourmet Popcorn &amp; Cookies, Jaipur</title>
 <meta name="description" content="Gourmet popcorn and cookies, freshly popped and baked in Jaipur. Nine flavours, two moods. Popped today, not last year.">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Molly's Popcorn — Popped today, not last year.">
+<meta property="og:title" content="Molly's Popcorn | Popped today, not last year.">
 <meta property="og:description" content="Gourmet popcorn and cookies, freshly popped and baked in Jaipur.">
 <meta property="og:image" content="https://mollyspopcorn.com/assets/img/og-image.jpg">
 <meta property="og:url" content="https://mollyspopcorn.com">
@@ -18,7 +18,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Caveat:wght@500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Caveat:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/assets/css/style.css">
 
@@ -32,6 +32,7 @@
   "url": "https://mollyspopcorn.com",
   "servesCuisine": "Popcorn, Cookies",
   "priceRange": "₹",
+  "sameAs": ["https://www.instagram.com/mollyspopcorn/"],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Jaipur",
@@ -42,6 +43,49 @@
 </script>
 </head>
 <body>
+
+<!-- ============ REUSABLE SVG DEFS ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Bandhej dot cluster (block-print grid) -->
+    <symbol id="bandhej" viewBox="0 0 80 32">
+      <g fill="currentColor">
+        <circle cx="8" cy="8" r="2.2"/><circle cx="24" cy="8" r="2.2"/><circle cx="40" cy="8" r="2.2"/><circle cx="56" cy="8" r="2.2"/><circle cx="72" cy="8" r="2.2"/>
+        <circle cx="16" cy="20" r="2.2"/><circle cx="32" cy="20" r="2.2"/><circle cx="48" cy="20" r="2.2"/><circle cx="64" cy="20" r="2.2"/>
+      </g>
+    </symbol>
+
+    <!-- Blue-pottery inspired flower medallion -->
+    <symbol id="pottery-flower" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="32" cy="32" r="6" fill="currentColor" fill-opacity="0.9"/>
+        <path d="M32 6c3 6 3 12 0 18M32 58c-3-6-3-12 0-18M6 32c6-3 12-3 18 0M58 32c-6 3-12 3-18 0"/>
+        <path d="M14 14c5 2 8 5 10 10M50 14c-5 2-8 5-10 10M14 50c5-2 8-5 10-10M50 50c-5-2-8-5-10-10"/>
+        <circle cx="32" cy="32" r="22" stroke-dasharray="2 4"/>
+      </g>
+    </symbol>
+
+    <!-- Hand-drawn wavy divider -->
+    <symbol id="wave-divider" viewBox="0 0 400 24" preserveAspectRatio="none">
+      <path d="M2 12 Q 25 2, 50 12 T 100 12 T 150 12 T 200 12 T 250 12 T 300 12 T 350 12 T 398 12"
+        fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Little scribble underline for flavour list rows -->
+    <symbol id="scribble" viewBox="0 0 60 8" preserveAspectRatio="none">
+      <path d="M2 5 Q 15 1, 28 4 T 58 4"
+        fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Rubber-stamp badge overlay -->
+    <symbol id="stamp" viewBox="0 0 140 140">
+      <g fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="70" cy="70" r="62" stroke-dasharray="3 3"/>
+        <circle cx="70" cy="70" r="56"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="siteHeader">
@@ -54,7 +98,7 @@
     <a href="#why">Why Popcorn</a>
     <a href="#contact">Find Us</a>
   </nav>
-  <a class="nav-cta" href="#contact">Where's the cart today?</a>
+  <a class="nav-cta" href="#contact">Say hi</a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
 </header>
 
@@ -71,12 +115,13 @@
 <!-- ============ HERO ============ -->
 <section class="hero grain">
   <div class="diamond-border"></div>
-  <div class="wrap hero-inner" style="margin-top:44px;">
+
+  <div class="wrap hero-inner">
     <div class="hero-copy">
       <span class="hero-eyebrow">Estd 2026 · Jaipur</span>
-      <h1>
-        <span class="line-yellow">molly's</span>
-        <span class="line-white">popcorn</span>
+      <h1 class="hero-headline">
+        <span class="l1">popped today,</span>
+        <span class="l2">not last year.</span>
       </h1>
       <p class="hero-sub">
         Gourmet <span class="hl">popcorn</span> &amp; <span class="hl2">cookies</span>,
@@ -84,21 +129,37 @@
       </p>
       <div class="hero-ctas">
         <a href="#flavours" class="btn btn-primary">See the flavours</a>
-        <a href="https://instagram.com/PLACEHOLDER_HANDLE" target="_blank" rel="noopener" class="btn btn-ghost">Follow on Instagram</a>
-        <svg class="hero-arrow" viewBox="0 0 140 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M4 14C34 8 76 44 132 30" stroke="#EFEFEF" stroke-width="3" stroke-linecap="round"/>
-          <path d="M114 20C121 24 128 27 132 30C127 32 120 33 112 36" stroke="#EFEFEF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <a href="https://www.instagram.com/mollyspopcorn/" target="_blank" rel="noopener" class="btn btn-ghost">
+          Follow on Instagram
+        </a>
+      </div>
+
+      <svg class="hero-arrow" viewBox="0 0 140 60" fill="none" aria-hidden="true">
+        <path d="M4 14C34 8 76 44 132 30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <path d="M114 20C121 24 128 27 132 30C127 32 120 33 112 36" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+      <div class="hero-bandhej" aria-hidden="true">
+        <svg><use href="#bandhej"/></svg>
+        <svg><use href="#bandhej"/></svg>
       </div>
     </div>
+
     <div class="hero-art">
-      <img class="hero-badge" src="/assets/img/logo.png" alt="Molly's Popcorn badge">
+      <div class="hero-art-ring" aria-hidden="true">
+        <svg viewBox="0 0 320 320">
+          <circle cx="160" cy="160" r="150" fill="none" stroke="var(--warm-amber)" stroke-width="2" stroke-dasharray="2 6"/>
+          <circle cx="160" cy="160" r="140" fill="none" stroke="var(--butter-yellow)" stroke-width="1.5" stroke-opacity="0.6"/>
+        </svg>
+      </div>
+      <img src="/assets/img/mascot-signature.jpg" alt="Molly's beagle mascot holding a bucket of popcorn" class="hero-mascot-hero">
+      <div class="hero-corner-flower" aria-hidden="true">
+        <svg style="color: var(--butter-yellow); width:44px; height:44px;"><use href="#pottery-flower"/></svg>
+      </div>
     </div>
   </div>
-  <div class="hero-mascot-wrap">
-    <img src="/assets/img/mascot-signature.jpg" alt="Molly's beagle mascot holding a bucket of popcorn">
-  </div>
-  <div class="diamond-border" style="margin-top:60px;"></div>
+
+  <div class="diamond-border" style="margin-top:56px;"></div>
 </section>
 
 <!-- ============ FLAVOURS ============ -->
@@ -106,35 +167,50 @@
   <div class="wrap">
     <div class="section-head">
       <span class="section-kicker">the menu</span>
-      <h2><span class="yellow">nine flavours,</span><br><span class="white">two moods</span></h2>
-      <p>Every batch is made fresh — no six months on the shelf. Popcorn that's still warm when it gets to you.</p>
+      <h2>
+        <span class="yellow">nine flavours,</span>
+        <span class="white">two moods</span>
+      </h2>
+      <p>Every batch is made fresh. No six months on the shelf. Popcorn that's still warm when it gets to you.</p>
+      <div class="head-wave" aria-hidden="true">
+        <svg style="color: var(--warm-amber); width:180px; height:18px;"><use href="#wave-divider"/></svg>
+      </div>
     </div>
 
     <div class="flavour-panels">
       <div class="flavour-panel savoury">
-        <h3>Savoury</h3>
+        <div class="panel-head">
+          <svg class="panel-flower" style="color: var(--butter-yellow); width:36px; height:36px;"><use href="#pottery-flower"/></svg>
+          <h3>Savoury</h3>
+          <span class="panel-count">05</span>
+        </div>
         <ul class="flavour-list">
-          <li>Classic Butter N Salt</li>
-          <li>Cheese Curry</li>
-          <li>Hot N Sweet</li>
-          <li>Pudina Punch</li>
-          <li>Zesty Lime</li>
+          <li><span class="flav-name">Classic Butter N Salt</span><svg class="flav-scribble"><use href="#scribble"/></svg></li>
+          <li><span class="flav-name">Cheese Curry</span><svg class="flav-scribble"><use href="#scribble"/></svg></li>
+          <li><span class="flav-name">Hot N Sweet</span><svg class="flav-scribble"><use href="#scribble"/></svg></li>
+          <li><span class="flav-name">Pudina Punch</span><svg class="flav-scribble"><use href="#scribble"/></svg></li>
+          <li><span class="flav-name">Zesty Lime</span><svg class="flav-scribble"><use href="#scribble"/></svg></li>
         </ul>
       </div>
+
       <div class="flavour-panel sweet">
-        <h3>Sweet</h3>
+        <div class="panel-head">
+          <svg class="panel-flower" style="color: var(--warm-amber); width:36px; height:36px;"><use href="#pottery-flower"/></svg>
+          <h3>Sweet</h3>
+          <span class="panel-count">04</span>
+        </div>
         <ul class="flavour-list">
-          <li>Milkee Way</li>
-          <li>Classic Chocolate</li>
-          <li>Pink Salt Caramel</li>
-          <li>Toffee Coffee</li>
+          <li><span class="flav-name">Milkee Way</span><svg class="flav-scribble"><use href="#scribble"/></svg></li>
+          <li><span class="flav-name">Classic Chocolate</span><svg class="flav-scribble"><use href="#scribble"/></svg></li>
+          <li><span class="flav-name">Pink Salt Caramel</span><svg class="flav-scribble"><use href="#scribble"/></svg></li>
+          <li><span class="flav-name">Toffee Coffee</span><svg class="flav-scribble"><use href="#scribble"/></svg></li>
         </ul>
       </div>
     </div>
 
     <div class="cookies-block">
-      <img src="/assets/img/mascot-bucket.jpg" alt="Beagle mascot napping in a popcorn bucket" style="width:120px;border-radius:18px;">
-      <div>
+      <img src="/assets/img/mascot-bucket.jpg" alt="Beagle mascot napping in a popcorn bucket" class="cookies-mascot">
+      <div class="cookies-copy">
         <h3>we saved room for cookies</h3>
         <span class="script-note">(it's fresh as well)</span>
         <div class="cookies-tags">
@@ -152,13 +228,20 @@
   <div class="wrap about-inner">
     <div class="about-art">
       <img src="/assets/img/cart-illustration.jpg" alt="Illustrated watercolour render of the Molly's Popcorn cart">
+      <div class="about-stamp" aria-hidden="true">
+        <svg style="color: var(--warm-amber); width:120px; height:120px;"><use href="#stamp"/></svg>
+        <div class="stamp-text">
+          <span>popped fresh</span>
+          <em>jaipur · 2026</em>
+        </div>
+      </div>
     </div>
     <div class="about-copy">
       <span class="section-kicker">our story</span>
       <h2>popped today, <span class="amber">not last year</span></h2>
       <p>
         Molly's Popcorn started in 2026 right here in Jaipur, with one cart and a simple idea:
-        popcorn should taste like it was made for you today — not packaged, shipped, and left
+        popcorn should taste like it was made for you today, not packaged, shipped, and left
         sitting on a shelf for months before it reaches you.
       </p>
       <p>
@@ -179,33 +262,45 @@
   <div class="wrap">
     <div class="section-head">
       <span class="section-kicker">why popcorn</span>
-      <h2><span class="yellow">a snack</span> <span class="white">you can trust</span></h2>
+      <h2>
+        <span class="yellow">a snack</span>
+        <span class="white">you can trust</span>
+      </h2>
       <p>Next to a shelf of packaged snacks, here's what makes ours different.</p>
     </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <svg class="glyph" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="26" cy="26" r="23" stroke="#F7DE72" stroke-width="3"/>
-          <path d="M26 14v12l9 6" stroke="#F7DE72" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>made to order</h3>
-        <p>Every batch is popped fresh at the cart — not weeks or months before it reaches you.</p>
+
+    <div class="why-list">
+      <article class="why-row why-row--l reveal">
+        <div class="why-num" aria-hidden="true">01</div>
+        <div class="why-body">
+          <h3>made to order</h3>
+          <p>Every batch is popped fresh at the cart. Not weeks or months before it reaches you.</p>
+        </div>
+      </article>
+
+      <div class="why-sep" aria-hidden="true">
+        <svg style="color: rgba(247,222,114,0.35); width:100%; height:22px;"><use href="#wave-divider"/></svg>
       </div>
-      <div class="why-card">
-        <svg class="glyph" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17 8c0 6-6 6-6 12a15 15 0 1030 0c0-6-6-6-6-12-2 4 0 7-3 7 1-8-4-11-4-15-4 4-1 8-3 8-2 0-1-4-3-8-2 4 2 7-2 8 0-4-3-7-3-12z" stroke="#F7DE72" stroke-width="2.4" stroke-linejoin="round"/>
-        </svg>
-        <h3>you can watch it pop</h3>
-        <p>No hidden factory line — the cart is the kitchen, right there on the street in front of you.</p>
+
+      <article class="why-row why-row--r reveal">
+        <div class="why-num" aria-hidden="true">02</div>
+        <div class="why-body">
+          <h3>you can watch it pop</h3>
+          <p>No hidden factory line. The cart is the kitchen, right there on the street in front of you.</p>
+        </div>
+      </article>
+
+      <div class="why-sep" aria-hidden="true">
+        <svg style="color: rgba(247,222,114,0.35); width:100%; height:22px;"><use href="#wave-divider"/></svg>
       </div>
-      <div class="why-card">
-        <svg class="glyph" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="10" y="10" width="32" height="32" rx="10" stroke="#F7DE72" stroke-width="3"/>
-          <path d="M18 26l6 6 12-12" stroke="#F7DE72" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>small batch, honest ingredients</h3>
-        <p>Nine flavours built from real seasoning and real ingredients, not a long label to decode.</p>
-      </div>
+
+      <article class="why-row why-row--l reveal">
+        <div class="why-num" aria-hidden="true">03</div>
+        <div class="why-body">
+          <h3>small batch, honest ingredients</h3>
+          <p>Nine flavours built from real seasoning and real ingredients, not a long label to decode.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -215,32 +310,38 @@
   <div class="wrap contact-inner">
     <div class="contact-copy">
       <span class="section-kicker">say hello</span>
-      <h2><span class="yellow">when &amp; where</span><br><span class="white">to find us</span></h2>
+      <h2>
+        <span class="yellow">when &amp; where</span>
+        <span class="white">to find us</span>
+      </h2>
       <p class="lede">Message us to order, or catch the cart around Jaipur. Follow along for the day's location.</p>
 
       <div class="contact-links">
         <a class="contact-link" href="https://wa.me/91PLACEHOLDER_NUMBER" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.12h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.03-.2-.31a8.18 8.18 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.2-8.25 8.2zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.38-1.99-1.22-.74-.65-1.24-1.46-1.38-1.71-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.53.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.12h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.03-.2-.31a8.18 8.18 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.2-8.25 8.2zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.38-1.99-1.22-.74-.65-1.24-1.46-1.38-1.71-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.53.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
           <span><span class="label">WhatsApp</span><span class="value">Order via WhatsApp</span></span>
         </a>
-        <a class="contact-link" href="https://instagram.com/PLACEHOLDER_HANDLE" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
-          <span><span class="label">Instagram</span><span class="value">@PLACEHOLDER_HANDLE</span></span>
+        <a class="contact-link" href="https://www.instagram.com/mollyspopcorn/" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          <span><span class="label">Instagram</span><span class="value">@mollyspopcorn</span></span>
         </a>
-        <a class="contact-link" href="mailto:hello@mollyspopcorn.com">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7l9 6 9-6"/></svg>
-          <span><span class="label">Email</span><span class="value">hello@mollyspopcorn.com</span></span>
+        <a class="contact-link" href="mailto:founders@mollyspopcorn.com">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7l9 6 9-6"/></svg>
+          <span><span class="label">Email</span><span class="value">founders@mollyspopcorn.com</span></span>
         </a>
       </div>
     </div>
 
     <div class="find-card">
+      <div class="find-flower" aria-hidden="true">
+        <svg style="color: var(--butter-yellow); width:40px; height:40px;"><use href="#pottery-flower"/></svg>
+      </div>
       <h3>where's the cart?</h3>
-      <span class="stay-tuned">📍 Location &amp; hours — stay tuned</span>
+      <span class="stay-tuned">📍 Location &amp; hours coming soon</span>
       <dl>
         <dt>City</dt><dd>Jaipur, Rajasthan</dd>
-        <dt>Hours</dt><dd>To be announced — follow Instagram for daily updates</dd>
-        <dt>Orders</dt><dd>WhatsApp ahead for pickup</dd>
+        <dt>Hours</dt><dd>To be announced. Follow Instagram for daily updates</dd>
+        <dt>Orders</dt><dd>Message us on WhatsApp</dd>
       </dl>
     </div>
   </div>
@@ -259,6 +360,9 @@
       <div class="footer-mascot">
         <img src="/assets/img/mascot-sleepy.jpg" alt="Molly's beagle mascot resting, full and happy">
       </div>
+    </div>
+    <div class="footer-bandhej" aria-hidden="true">
+      <svg style="color: rgba(247,222,114,0.4); width:180px; height:16px;"><use href="#bandhej"/></svg>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Molly's Popcorn, Jaipur. All rights reserved.</span>
