@@ -31,6 +31,42 @@
     a.addEventListener('click', closeNav);
   });
 
+  // ---- Live open/closed status (cart hours 6pm to 10pm, India time) ----
+  // Always computed in Asia/Kolkata, so a tourist with a foreign phone sees Jaipur time.
+  var OPEN_MIN = 18 * 60, CLOSE_MIN = 22 * 60;
+  function istMinutes() {
+    var parts = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+    }).formatToParts(new Date());
+    var h = 0, m = 0;
+    parts.forEach(function (p) {
+      if (p.type === 'hour') h = parseInt(p.value, 10);
+      if (p.type === 'minute') m = parseInt(p.value, 10);
+    });
+    return h * 60 + m;
+  }
+  function updateStatus() {
+    var now, text, open;
+    try { now = istMinutes(); } catch (e) { return; } // leave default text if Intl unavailable
+    if (now >= OPEN_MIN && now < CLOSE_MIN) {
+      open = true;
+      text = (CLOSE_MIN - now <= 30) ? 'Open now · closing soon' : 'Open now · until 10pm';
+    } else if (now < OPEN_MIN) {
+      open = false;
+      text = 'Closed · opens today at 6pm';
+    } else {
+      open = false;
+      text = 'Closed · opens tomorrow, 6pm';
+    }
+    document.querySelectorAll('[data-status]').forEach(function (el) {
+      el.classList.toggle('is-open', open);
+      var t = el.querySelector('.status-text');
+      if (t) t.textContent = text;
+    });
+  }
+  updateStatus();
+  setInterval(updateStatus, 60000);
+
   // ---- Reveal on scroll (respects reduced motion) ----
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var revealTargets = document.querySelectorAll('.reveal');
